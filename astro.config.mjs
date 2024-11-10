@@ -6,22 +6,26 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Web開発入門',     
+			 editLink: {
+        baseUrl: 'https://github.com/naotiki/web-dev-intro/edit/main/',
+      },
+			tableOfContents: {
+				minHeadingLevel:1,
+				maxHeadingLevel: 3,
+			},
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/naotiki/web-dev-intro',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					label: 'Webの基礎',
+					autogenerate: { directory: 'basics' },
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
+					label: 'このサイトについて',
+					autogenerate: { directory: 'about' },
+				}
 			],
 		}),
 	],

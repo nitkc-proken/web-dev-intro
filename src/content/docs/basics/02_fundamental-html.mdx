@@ -1,0 +1,106 @@
+---
+title: "HTML・CSS・JSの基礎"
+---
+import HtmlPreview from '../../../components/HtmlPreview.astro';
+
+アプリにおいてユーザーが直接触れる部分を**フロントエンド**と呼ぶ。
+画面は基本的に、HTML、CSS、JavaScript(あとWebAssembry)を使って構築され、ブラウザーによって解釈、実行される。
+
+# HTML (Hyper Text Markup Language)
+HTMLは、Webページの構造を記述するための言語。
+HTMLは、タグという記号を使って、要素を表現する。
+
+`<a href=”https://google.com”>Google</a>` のように`<タグ名 属性1=値1>中身(子,childrenともいう)</タグ名>`のように構成されている。
+
+実際のサイトはこのような入れ子構造になっている。
+<HtmlPreview html={`
+<html lang="ja">
+  <head>
+    <title>タイトルです</title>
+  </head>
+  <body>
+    <h1>見出し</h1>
+    <main>
+      やぁ
+      <a href="https://google.com">Googleへ行く</a>
+    </main>
+  </body>
+</html>
+`}/>
+
+HTMLは、ブラウザーによって解釈され、画面に表示される。
+
+HTMLにはいくつものタグがあり、デフォルトでスタイル(見た目)や機能がついている。
+
+例えば、`<a>`タグはリンクを作成するタグで、クリックすると指定したURLに遷移する。
+`<img>`タグは画像を表示するタグで、`src`属性に画像のURLを指定することで画像を表示することができる。
+
+# CSS (Cascading Style Sheet)
+CSSは、Webページのスタイルを記述するための言語。
+HTMLで記述された要素に対して、スタイルを適用することができる。
+
+CSSは、`<style>`タグの中や別のファイルに記述することができる。
+
+タグやクラス、IDなどを指定して、スタイルを適用することができる。
+
+<HtmlPreview html={`
+<html lang="ja">
+  <head>
+    <title>タイトルです</title>
+   <style>
+     body {
+       background-color: #00ff00;
+     }
+     .red {
+       color: red;
+     }
+   </style>  
+  </head>
+  <body>
+    <h1>見出し</h1>
+    <h2 class="red">赤い見出し</h1>
+    <main>
+      やぁ
+      <a href=”https://google.com”><span class="red">Google</span>へ行く</a>
+    </main>
+  </body>
+</html>
+`}/>
+
+もちろんCSSが指定できるのは色だけでなく、フォント、レイアウト、アニメーションなど様々なスタイルを指定することができる。
+# JavaScript
+ブラウザに動きを追加できる。
+
+下はボタンがクリックされたら、テキストを変更するJavaScriptの例。
+<HtmlPreview html={`
+<html lang="ja">
+  <head>
+    <title>タイトルです</title>
+  </head>
+  <body>
+    <button id="btn">
+      クリックしてね
+    </button>
+    <div id="text"></div>
+    <script>
+      // ボタンがクリックされたら、テキストを追加する
+      document.getElementById('btn').addEventListener('click', () => {
+        document.getElementById('text').textContent = 'クリックされました';
+      });
+    </script>
+  </body>
+</html>
+`}/>
+
+
+これは単純な例だが、JavaScriptを使うと動的にHTMLを操作できる。
+
+JavaScriptの登場により、
+
+* クリックしたら何かしらの処理をする
+* ユーザーが入力した値を取得して何かしらの処理をする
+
+のように動的なWebページが作成できるようになった。
+
+いままで学んだHTML,CSS,JavaScriptを使って、最低限のWebページは作成できるようになった。
+しかし、現代においてこの3つだけでWebページを制作する人は少ないと思われる。
