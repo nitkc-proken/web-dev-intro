@@ -2,12 +2,16 @@
 title: "Webの基礎"
 ---
 # HTTP (Hyper Text Transfer Protocol)
-HTTP は、 HTMLやCSSなどのリソースファイルを読み取るためのプロトコル(通信規則)。
-HTTPは、クライアントとサーバーの間でデータを送受信するための規則を定めている。
+Webサイトは、私達がWebブラウザを使って、WebサーバーからHTMLやCSSなどのファイルを受け取って処理することで表示している。
+HTTP は、 HTMLやCSSなどのWebサイトを表示するためのファイルを読み取るためのプロトコル(通信規則)。
 
-クライアントは、ChromeやSafariなどのブラウザーの他にcurlなど様々なものがある。
+URLの先頭に よく、`http://` という文字列があるが、これがHTTPプロトコルを使用していることを示している。
+`https://`はHTTPの暗号化バージョン。
 
-サーバーは、ApacheやNginxのようなWebサーバーを使う、もしくはNode.jsのexpressなどのサーバーフレームワークを用いて作ることができる。
+サーバーにHTTPでリクエストを送り、ファイルをもらう側をクライアントという。
+クライアントは、ChromeやSafariなどのブラウザーの他にcurlというCUI上のものなど様々なものがある。
+
+サーバーは、ApacheやNginxのようなWebサーバーを使う、またはNode.jsのexpressなどのサーバーフレームワークと呼ばれるものを用いて作ることができる。
 ## HTTP リクエスト
 クライアントがサーバーに操作を要求する際に送信されるのが**HTTP リクエスト**。
 ![HTTP Request](https://mdn.github.io/shared-assets/images/diagrams/http/overview/http-request.svg)
@@ -29,6 +33,10 @@ HTTPは、クライアントとサーバーの間でデータを送受信する�
 ### ヘッダー (Header)
 リクエストに関する情報を含む。
 以下はヘッダーの例。
+* Host
+  * リクエストを送信するサーバーのホスト名
+  * 例: `Host: developer.mozilla.org`
+  * ポートはデフォルトのポートであれば省略できる。  
 * User-Agent (UA)
   * リクエストを送信したクライアントの情報を含む。
   * 例: `User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3`
@@ -112,6 +120,13 @@ HTTP(S)にはデフォルトのポートがあり、HTTPは80番、HTTPSは443�
 初期のWebではサーバー上にある実際のファイルへのパスを示していたが、現在ではパスはWebサーバーによって処理される抽象的なものになっている。
 
 ### 「抽象的なもの」とは？
+元々、HTTPはファイルをダウンロードするためのプロトコルだった。そのため、URLはファイルの場所をそのまま示すものだった。
+
+例えば `http://example.com/files/example.txt` というURLは、example.comのサーバー上にあるfilesディレクトリのexample.txtというファイルをダウンロード(表示)することを表す。
+
+しかし、Webサイトが複雑になり、データベースからデータを取得して処理してから表示するようになると、URLはファイルの場所を示すだけでなく、データベースからデータを取得するための情報を含むようになった。
+
+例：
 [https://x.com **/Naotiki13/status/1813753684838510978**](https://x.com/Naotiki13/status/1813753684838510978)
 
 実際のサーバーに/Naotiki13/status/1813753684838510978というファイルがあり、そこに
@@ -120,7 +135,7 @@ HTTP(S)にはデフォルトのポートがあり、HTTPは80番、HTTPSは443�
 YubiKey洗濯
 ```
 と書かれているわけではない。
-サーバーはリクエストにあるこのパスを見て、「Naotiki13」さんのポスト「1813753684838510978」を見たいんだなと解釈しデータベースからデータを取得し、返している。
+サーバーはリクエストにあるこのパスを見て、「Naotiki13」さんのポストID「1813753684838510978」を見たいんだなと解釈しデータベースからデータを取得し、処理をしてから返している。
 ## クエリパラメーター (Query Parameter)
 ![](https://developer.mozilla.org/ja/docs/Learn/Common_questions/Web_mechanics/What_is_a_URL/mdn-url-parameters@x2.png)
 Webサーバーに提供される追加の引数のようなもの。なんの値かを表す「Key」とその値の中身を表す「Value」を`=`記号で結び、複数のパラメーターは`&`記号で区切られる。
@@ -151,7 +166,7 @@ Webサーバーに提供される追加の引数のようなもの。なんの�
 * 要素: ページを構成する一部分
 * ID: 要素に指定できる一意の名前
 
-である。具体的な説明は次章の[HTMLの基礎](/basics/02_fundamental-html/)で行う。
+である。具体的な説明は次章の[HTMLの基礎](../02_fundamental-html/)で行う。
 
 
 
