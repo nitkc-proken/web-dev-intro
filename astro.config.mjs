@@ -1,11 +1,18 @@
 import starlight from "@astrojs/starlight";
 // @ts-check
 import { defineConfig } from "astro/config";
-
+import rlc from "remark-link-card";
 // https://astro.build/config
 export default defineConfig({
   site: "https://nitkc-proken.github.io",
   base: "/web-dev-intro",
+  markdown:{
+    remarkPlugins: [[
+      rlc,{
+        shortenUrl:true,
+      }
+    ]],
+  },
   integrations: [
     starlight({
       title: "Web開発入門",
@@ -28,7 +35,15 @@ export default defineConfig({
           label: "このサイトについて",
           autogenerate: { directory: "about" },
         },
+        {
+          label: "ツール・環境構築",
+          autogenerate: { directory: "tools" },
+        }
       ],
+      customCss:[
+        "./src/styles/linkcard.css"
+      ]
     }),
   ],
+  
 });
