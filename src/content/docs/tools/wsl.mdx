@@ -4,7 +4,6 @@ description: WSLのインストール方法と初期設定
 ---
 import wsl_install_command from './assets/wsl/wsl_install_command.mp4';
 import wsl_install_manual from './assets/wsl/wsl_install_manual.mp4';
-import { Aside } from '@astrojs/starlight/components';
 
 # WSLとは
 WSL (Windows Subsystem on Linux) とはWindows上でLinuxを動かすための機能です。
@@ -33,20 +32,19 @@ https://support.microsoft.com/ja-jp/windows/windows-11-pc-で仮想化を有効�
     - Virtualization
     - Intel VT-d
     などの項目があれば **有効(Enabled)** にする
-    <Aside type="caution">
+    :::caution
     CPUやマザーボードのメーカーによって設定内容が変わるので注意！
-    </Aside>
+    :::
 </details>
 ## 方法1 `wsl --install`
 
 https://learn.microsoft.com/ja-jp/windows/wsl/install
 
 
-<Aside >
+:::note
 最初から `wsl`コマンドが使えるのは、Windows 11もしくは一部のWindows 10のみです。
 `wsl` コマンドが使えない場合は、[方法2 手動で設定](#方法2-手動で設定) を試してください。
-
-</Aside>
+:::
 
 「スタート」(🪟)を右クリックして「ターミナル」もしくは「PowerShell」を開く
 
@@ -68,11 +66,11 @@ https://learn.microsoft.com/ja-jp/windows/wsl/install-manual
 ## 初期設定
 
 1. `Enter new UNIX username:` と聞かれるのでユーザー名を入力
-<Aside type="caution">
+:::caution
 注意：ユーザー名は英小文字から始め、残りは英小文字/数字のみ使う
 - ⭕️naotiki, j22413, kotlin1234
 - ❌️なおちき, 22413, Kotlin1234
-</Aside>
+:::
 
 2. `New password:` でパスワードを入力 
 入力した文字は表示されないので注意 もちろん今後もずっと使うので覚えておこう

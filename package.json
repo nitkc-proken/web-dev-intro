@@ -13,6 +13,8 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/starlight": "^0.29.0",
     "astro": "^4.16.10",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
     "remark-breaks": "^4.0.0",
     "remark-link-card": "^1.3.1",
     "sharp": "^0.32.5",

@@ -3,9 +3,13 @@ import starlight from "@astrojs/starlight";
 import { defineConfig } from "astro/config";
 import rlc from "remark-link-card";
 import remarkBreaks from "remark-breaks";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://nitkc-proken.github.io",
+  trailingSlash: "always",
   base: "/web-dev-intro",
   markdown: {
     remarkPlugins: [
@@ -16,6 +20,10 @@ export default defineConfig({
         },
       ],
       remarkBreaks,
+    ],
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, { behavior: "append" }],
     ],
   },
   integrations: [
@@ -30,6 +38,8 @@ export default defineConfig({
       },
       social: {
         github: "https://github.com/nitkc-proken/web-dev-intro",
+        twitter: "https://twitter.com/NITKiC_pro",
+        "x.com": "https://x.com/NITKiC_pro",
       },
       sidebar: [
         {

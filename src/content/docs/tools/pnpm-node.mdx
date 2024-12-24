@@ -1,0 +1,65 @@
+---
+title: Node.jsとpnpm
+description: Node.jsとpnpmのインストール方法について
+---
+import { LinkCard } from '@astrojs/starlight/components';
+
+Node.jsとpnpmとは何かについては下の記事を参照
+<LinkCard title="Node.jsとパッケージマネージャ" href="../../basics/09_nodejs_pm/" />
+
+## pnpmのインストール
+下記のインストール方法を参考にして、pnpmをインストールします。
+
+https://pnpm.io/ja/installation
+
+
+WindowsではなくWSLを使ってLinux上で環境構築することをおすすめします。
+
+<LinkCard title="WSL(Windows Subsystem on Linux)" href="../wsl/" />
+
+### Linux / WSLの場合
+
+
+```sh
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+`curl`コマンドが使えない場合は、`wget`コマンドを使ってインストールしてください。
+```sh
+wget -qO- https://get.pnpm.io/install.sh | sh -
+```
+
+### Windowsの場合
+Powershellを開いて、下記のコマンドを実行してください。
+
+```powershell
+Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression
+```
+または、wingetを使ってインストールすることもできます。
+
+```sh
+winget install pnpm
+```
+
+---
+インストールが終わったら、ターミナルを再起動しましょう。
+
+# Node.jsのインストール
+pnpmにはNode.jsを管理する機能があります。
+
+`pnpm env`コマンドを使って好きなバージョンのNode.jsをインストールしたり切り替えたりできます。
+
+https://pnpm.io/ja/cli/env
+
+
+## Node.jsの安定版(LTS)をインストールする。
+基本はこれでOK
+```sh
+pnpm env use --global lts
+```
+## Node.jsのv18をインストールする。
+```sh
+pnpm env use --global 18
+```
+---
+`--global`オプションをつけることでPC全体にインストールできます。
+

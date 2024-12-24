@@ -1,15 +1,21 @@
 ---
+type MarkerType = MarkerDefinition | MarkerDefinition[];
 interface Props {
   html: string;
+  title?: string;
+  ins?:MarkerType;
+  del?:MarkerType;
+  mark?:MarkerType;
 }
-const { html } = Astro.props;
+const { html,...codeProps } = Astro.props;
 import { Code } from "@astrojs/starlight/components";
 import { TabItem, Tabs } from "@astrojs/starlight/components";
+import type { MarkerDefinition } from "@astrojs/starlight/expressive-code";
 ---
 
 <Tabs>
   <TabItem label="コード">
-    <Code code={html} lang="html" />
+    <Code code={html} lang="html" {...codeProps} />
   </TabItem>
   <TabItem label="結果">
     <iframe srcdoc={html} sandbox="allow-scripts" style="width: 100%; height: 100%; border: none;">
