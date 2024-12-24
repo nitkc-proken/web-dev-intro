@@ -20,7 +20,7 @@
 }
 
 .rlc-info {
-  /* overflow: hidden; */
+  overflow: hidden;
   padding: 0.5rem;
   flex: 4 1 100px;
   text-align: left;
@@ -32,7 +32,7 @@
 .rlc-title {
   font-size: 1.25rem;
   white-space: nowrap;
-  /* overflow: hidden; */
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
