@@ -1,6 +1,5 @@
 .rlc-container {
   width: 100%;
-  max-width: 800px;
   /* max-height: 120px; */
   margin: 0 auto 2rem;
 
@@ -40,7 +39,7 @@
 .rlc-description {
   font-size: 0.875rem;
   color: #333;
-  /* overflow: hidden; */
+  overflow: hidden;
   line-height:1rem;
   height: 2rem;
 }

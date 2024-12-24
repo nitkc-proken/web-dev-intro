@@ -2,16 +2,21 @@ import starlight from "@astrojs/starlight";
 // @ts-check
 import { defineConfig } from "astro/config";
 import rlc from "remark-link-card";
+import remarkBreaks from "remark-breaks";
 // https://astro.build/config
 export default defineConfig({
   site: "https://nitkc-proken.github.io",
   base: "/web-dev-intro",
-  markdown:{
-    remarkPlugins: [[
-      rlc,{
-        shortenUrl:true,
-      }
-    ]],
+  markdown: {
+    remarkPlugins: [
+      [
+        rlc,
+        {
+          shortenUrl: true,
+        },
+      ],
+      remarkBreaks,
+    ],
   },
   integrations: [
     starlight({
@@ -38,12 +43,9 @@ export default defineConfig({
         {
           label: "ツール・環境構築",
           autogenerate: { directory: "tools" },
-        }
+        },
       ],
-      customCss:[
-        "./src/styles/linkcard.css"
-      ]
+      customCss: ["./src/styles/linkcard.css"],
     }),
   ],
-  
 });
