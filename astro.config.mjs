@@ -22,14 +22,14 @@ export default defineConfig({
     starlight({
       title: "Web開発入門",
       editLink: {
-        baseUrl: "https://github.com/naotiki/web-dev-intro/edit/main/",
+        baseUrl: "https://github.com/nitkc-proken/web-dev-intro/edit/main/",
       },
       tableOfContents: {
         minHeadingLevel: 1,
         maxHeadingLevel: 3,
       },
       social: {
-        github: "https://github.com/naotiki/web-dev-intro",
+        github: "https://github.com/nitkc-proken/web-dev-intro",
       },
       sidebar: [
         {
