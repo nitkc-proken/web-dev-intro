@@ -37,12 +37,12 @@ export default defineConfig({
           autogenerate: { directory: "basics" },
         },
         {
-          label: "このサイトについて",
-          autogenerate: { directory: "about" },
-        },
-        {
           label: "ツール・環境構築",
           autogenerate: { directory: "tools" },
+        },
+        {
+          label: "このサイトについて",
+          autogenerate: { directory: "about" },
         },
       ],
       customCss: ["./src/styles/linkcard.css"],
