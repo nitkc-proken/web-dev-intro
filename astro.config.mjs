@@ -49,6 +49,10 @@ export default defineConfig({
           autogenerate: { directory: "tools" },
         },
         {
+          label: "ガイド",
+          autogenerate: { directory: "guides" },
+        },
+        {
           label: "このサイトについて",
           autogenerate: { directory: "about" },
         },
