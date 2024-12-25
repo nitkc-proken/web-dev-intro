@@ -28,6 +28,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Web開発入門",
+      lastUpdated:true,
       editLink: {
         baseUrl: "https://github.com/nitkc-proken/web-dev-intro/edit/main/",
       },
@@ -56,6 +57,7 @@ export default defineConfig({
           label: "このサイトについて",
           autogenerate: { directory: "about" },
         },
+        
       ],
       customCss: ["./src/styles/linkcard.css","./src/styles/headings.css"],
     }),
