@@ -59,7 +59,7 @@ export default defineConfig({
         },
         
       ],
-      customCss: ["./src/styles/linkcard.css","./src/styles/headings.css"],
+      customCss: ["./src/styles/linkcard.css","./src/styles/headings.css","./src/styles/custom.css"],
     }),
   ],
 });
