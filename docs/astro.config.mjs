@@ -36,10 +36,10 @@ export default defineConfig({
         minHeadingLevel: 1,
         maxHeadingLevel: 3,
       },
-      social: {
-        github: "https://github.com/nitkc-proken/web-dev-intro",
-        "x.com": "https://x.com/NITKiC_pro",
-      },
+      social:[
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/nitkc-proken/web-dev-intro' },
+        { icon: 'x.com', label: 'X', href: 'https://x.com/NITKiC_pro' },
+      ],
       sidebar: [
         {
           label: "Webの基礎",
@@ -52,6 +52,10 @@ export default defineConfig({
         {
           label: "ガイド",
           autogenerate: { directory: "guides" },
+        },
+        {
+          label: "Reactチュートリアル",
+          autogenerate: { directory: "react-tutorial" },
         },
         {
           label: "このサイトについて",
