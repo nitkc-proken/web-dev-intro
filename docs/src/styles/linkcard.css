@@ -1,17 +1,17 @@
+@reference "./global.css";
 .rlc-container {
   width: 100%;
   /* max-height: 120px; */
-  margin: 0 auto 2rem;
+  margin: 1rem auto 1rem;
 
-  color: black;
+  color: var(--sl-color-white);
   text-decoration: none;
-
-  border: 1px solid black;
   border-radius: 0.25rem;
   display: flex;
   align-items: stretch;
 
   transition: background 200ms ease-in-out 0s, box-shadow 200ms ease-in-out 0s;
+  @apply border-[1px];
 }
 
 .rlc-container:hover{
@@ -38,10 +38,10 @@
 
 .rlc-description {
   font-size: 0.875rem;
-  color: #333;
   overflow: hidden;
   line-height:1rem;
   height: 2rem;
+  @apply text-gray-400 dark:text-gray-500;
 }
 
 .rlc-url-container {

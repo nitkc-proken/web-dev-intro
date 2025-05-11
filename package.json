@@ -1,12 +1,15 @@
 {
   "name": "web-dev-intro",
   "version": "0.0.1",
-  "scripts": {},
+  "scripts": {
+    "dev": "pnpm --filter=./docs dev "
+  },
   "pnpm": {
     "executionEnv": {
       "nodeVersion": "22.15.0"
     },
     "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
       "esbuild"
     ]
   },
