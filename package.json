@@ -9,8 +9,10 @@
       "nodeVersion": "22.15.0"
     },
     "onlyBuiltDependencies": [
+      "@biomejs/biome",
       "@tailwindcss/oxide",
-      "esbuild"
+      "esbuild",
+      "sharp"
     ]
   },
   "packageManager": "pnpm@10.10.0",
