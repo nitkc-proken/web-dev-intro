@@ -1,4 +1,15 @@
-.sl-markdown-content img{
+.sl-markdown-content img {
   max-height: 70vh;
   object-fit: contain;
+}
+
+
+.sl-markdown-content ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.sl-markdown-content ol {
+  list-style: decimal;
+  list-style-position: inside;
 }

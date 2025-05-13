@@ -1,0 +1,92 @@
+---
+title: 環境構築
+description: Reactチュートリアルの環境構築
+---
+import { FileTree } from '@astrojs/starlight/components';
+
+# 必要なもの
+- WSL
+  - [WSLのインストール方法](../../../tools/wsl/)
+- Node.js
+- pnpm
+  - [pnpm, Node.jsのインストール方法](../../../tools/pnpm-node/)
+- Git
+- VSCode (推奨！)
+
+# プロジェクトの作成
+Visual Studio Codeを開き、WSLに接続します。
+
+その後ターミナルを開き以下のコマンドで必要なファイルたちをダウンロードします
+```bash
+git clone https://github.com/nitkc-proken/shiritori-react.git
+```
+
+VSCodeで作成した`shiritori-react`ディレクトリを開きます。
+
+その後、VSCodeのターミナルを開き以下のコマンドで必要なパッケージをインストールします。
+```bash
+pnpm install
+```
+:::note
+`pnpm i`と省略してもOKです。
+:::
+
+このコマンドはサイトを作るのに必要な「パッケージ」と呼ばれるファイル群をダウンロードしてくれます。
+これで、Reactの開発環境が整いました。
+
+試しにサーバーを立ち上げてみましょう。
+```bash
+pnpm run dev
+```
+:::note
+`pnpm dev`と省略してもOKです。
+:::
+
+```bash title="開発用サーバーの起動"
+pnpm dev
+
+> shiritori-react@0.0.0 dev /home/naotiki/projects/web-dev-intro/examples/shiritori-react
+> vite
+
+
+  VITE v6.3.5  ready in 182 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+```
+
+起動に成功すると上のようなログがでてきます。
+**Local:** の部分にあるURL(この場合は`http://localhost:5173/`)をブラウザ(Chromeなど)で開くと、このようなページが表示されます。
+![](./image/vite_example_default.png)
+
+これで環境構築は完了です🎉
+
+:::tip
+`pnpm run dev`で起動したサーバーは**ホットリロード**という機能を持っています。
+この機能は、ファイルの変更を検知して、ブラウザの画面を自動で更新してくれるものです。
+なのでいちいちファイルを変えたからと言って`pnpm run dev`を再実行する必要はありません。
+:::
+
+# (おまけ) ファイル構成
+Reactでウェブサイトを作るには様々なファイルが必要です。
+
+<FileTree>
+
+- node_modules/ ライブラリなどが入っているディレクトリ
+- public/ そのまま公開されるディレクトリ
+  - vite.svg
+- src/ ソースコードが入っているディレクトリ
+  - components/ コンポーネント(後で説明)を入れるディレクトリ
+  - App.css 
+  - App.jsx アプリ本体のファイル
+  - index.css
+  - main.jsx 一番最初に呼び出されるファイル
+- .gitignore gitで管理しないファイルを指定するファイル
+- biome.json Biomeの設定ファイル
+- index.html アプリのHTMLファイル
+- package.json npmの設定ファイル
+- pnpm-lock.yaml pnpmの依存関係を管理するファイル
+- README.md プロジェクトの説明ファイル
+- vite.config.js Viteの設定ファイル
+</FileTree>
