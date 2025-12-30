@@ -1,0 +1,20 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Context
+- This project is a website for learning web fundamentals, React, Remix, and other web frameworks, aimed at beginners (high school students) with no prior web programming experience.
+- The technology stack includes Astro, Starlight, and TypeScript.
+
+# AI Guidance
+- Always search the web actively to provide up-to-date and accurate information when generating learning content.
+- All learning content, explanations, and user-facing text must be written in clear, simple Japanese suitable for absolute beginners.
+- When reasoning, planning, or thinking internally, use English for faster LLM processing. Do not output this internal process to the user.
+- All user-facing output (including code comments, explanations, and instructions) must be in Japanese.
+- Ensure that explanations are beginner-friendly, avoiding jargon or explaining it when necessary.
+- When introducing code, provide context and step-by-step guidance in Japanese.
+- Prefer practical, hands-on examples that are easy to follow for high school students.
+- When referencing web frameworks (React, Remix, etc.), explain concepts from the ground up, assuming no prior knowledge.
+- Use the project's technology stack (Astro, Starlight, TypeScript) in all technical examples unless otherwise specified.
+- When executing commands (such as via terminal or scripts), always check the current state proactively using commands like `pwd` and `git status` before and after running important operations. This helps ensure you understand the working directory and repository status, reducing mistakes.
